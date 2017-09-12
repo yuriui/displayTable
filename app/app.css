@@ -23,3 +23,23 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+.listTable {
+  margin: 10px 10px 30px 40px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 400px;
+}
+
+td, th {
+  border: 1px solid #aaaaaa;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #d5d5d5;
+}

@@ -1,1 +1,12 @@
-<p>This is the partial for view 1.</p>
+<table class="listTable">
+    <tr>
+        <th>name</th>
+        <th>category</th>
+        <th>amount</th>
+    </tr>
+    <tr ng-repeat="set in dataList">
+        <td>{{set.name||''}}</td>
+        <td>{{set.category||''}}</td>
+        <td>{{set.amount||''}}</td>
+    </tr>
+</table>
