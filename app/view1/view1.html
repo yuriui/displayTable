@@ -1,0 +1,12 @@
+<table class="listTable">
+    <tr>
+        <th ng-click="changeOrder('name')">name</th>
+        <th ng-click="changeOrder('category')">category</th>
+        <th ng-click="changeOrder('amount')">amount</th>
+    </tr>
+    <tr ng-repeat="dataSet in dataList| orderBy: sortType">
+        <td>{{dataSet.name||''}}</td>
+        <td>{{dataSet.category||''}}</td>
+        <td>{{dataSet.amount||''}}</td>
+    </tr>
+</table>
