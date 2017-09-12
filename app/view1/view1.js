@@ -9,14 +9,11 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-    .controller('View1Ctrl', ['$http', '$scope', function ($http, $scope) {
-        $http.get('./data.json')
-            .then(function (response) {
-
-                $scope.dataList = response.data.data;
-
-            });
-
+    .controller('View1Ctrl', ['$scope', 'getListDataService', function ($scope, getListDataService) {
+        getListDataService.getDataList().then(function(response){
+            $scope.dataList = response.data.data;
+            // console.log("$scope.dataList:"+$scope.dataList);
+        });
         $scope.sortType = "name";
 
         $scope.changeOrder = function (sortType) {
@@ -47,4 +44,13 @@ angular.module('myApp.view1', ['ngRoute'])
                     $scope.sortType = "name";
             }
         }
-}]);
+    }])
+
+    .service('getListDataService', ['$http', function ($http) {
+
+        //to share listData for both controllers
+        this.getDataList = function () {
+            return $http.get('./data.json');
+        };
+
+    }]);

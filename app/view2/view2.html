@@ -1,5 +1,14 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div class="listTable">
+  <table>
+    <tr>
+      <th>name</th>
+      <th>C1</th>
+      <th>C2</th>
+      <th>C3</th>
+    </tr>
+    <tr ng-repeat="eachList in orderedListData track by $index">
+      <td>{{names[$index]}}</td>
+      <td ng-repeat="eachAmount in eachList track by $index">{{eachAmount}}</td>
+    </tr>
+  </table>
+</div>
